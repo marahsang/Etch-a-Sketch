@@ -22,7 +22,12 @@ function makeGrids(size) {
     function clearGrid(){
       let number = prompt("How many squares per side for the new grid?")
       if(number >= 1 && number <= 100){
+        while (screen.hasChildNodes()) {
+          screen.removeChild(screen.lastChild); // removes all grid squares
+      }
         makeGrids(number)
+  } else {
+    alert("choose a number between 1-100");
   }
 }
 window.onload = makeGrids(16);
