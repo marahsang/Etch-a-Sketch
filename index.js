@@ -20,7 +20,9 @@ function makeGrids(size) {
 
 
     function clearGrid(){
-      let number = prompt("How many squares per side for the new grid?" );
-      
+      let number = prompt("How many squares per side for the new grid?")
+      if(number >= 1 && number <= 100){
+        makeGrids(number)
+  }
 }
-    makeGrids(16);
+clearGrid()
