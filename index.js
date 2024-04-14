@@ -17,4 +17,10 @@ function makeGrids(size) {
      }
 
     } 
+
+
+    function clearGrid(){
+      let number = prompt("How many squares per side for the new grid?" );
+      
+}
     makeGrids(16);
