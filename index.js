@@ -30,4 +30,5 @@ function makeGrids(size) {
     alert("choose a number between 1-100");
   }
 }
+buttons.addEventListener('click', clearGrid); 
 window.onload = makeGrids(16);
