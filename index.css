@@ -53,8 +53,13 @@
     height: auto;
     flex: 1 0 auto;
   }
-  
+
   .row:hover {
     background-color: blue;
     transition: ease 0.1s all;
 }
+
+.row {
+  transition: ease 3s all;
+}
+
