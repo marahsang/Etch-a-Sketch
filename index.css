@@ -52,7 +52,12 @@
   .sketch-screen>div {
     height: auto;
     flex: 1 0 auto;
+
+    display: flex;
+    flex-direction: column;
   }
+
+  
 
   .row:hover {
     background-color: blue;
