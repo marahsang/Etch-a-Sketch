@@ -63,3 +63,14 @@
   transition: ease 3s all;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  background-color: #555454;
+  padding: 12px;
+  margin-top: 16px;
+  color: aliceblue;
+}
+
