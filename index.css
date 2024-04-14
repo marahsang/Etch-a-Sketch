@@ -21,7 +21,7 @@
     margin: 30px 20px auto;
     text-transform: uppercase;
   }
-  
+
   #clearButton{	
     margin: 30px auto;
     border-radius: 20px;
@@ -53,5 +53,8 @@
     height: auto;
     flex: 1 0 auto;
   }
-
- 
+  
+  .row:hover {
+    background-color: blue;
+    transition: ease 0.1s all;
+}
