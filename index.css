@@ -31,6 +31,9 @@
 
 
   .sketch-screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     width: 600px;
     height: 600px;
     border: 3px solid #050505;
