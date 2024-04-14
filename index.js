@@ -25,4 +25,4 @@ function makeGrids(size) {
         makeGrids(number)
   }
 }
-clearGrid()
+window.onload = makeGrids(16);
