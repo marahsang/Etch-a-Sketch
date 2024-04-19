@@ -23,7 +23,7 @@ function makeGrids(size) {
       let number = prompt("How many squares per side for the new grid?")
       if(number >= 1 && number <= 100){
         while (screen.hasChildNodes()) {
-          screen.removeChild(screen.lastChild); // removes all grid squares
+          screen.removeChild(screen.lastChild);
       }
         makeGrids(number)
   } else {
