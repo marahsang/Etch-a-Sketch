@@ -1,34 +1,32 @@
-let container = document.querySelector(".container"); 
-let screen = document.querySelector(".sketch-screen");
-const buttons = document.querySelector('#clearButton');
+const container = document.querySelector(".container");
+const screen = document.querySelector(".sketch-screen");
+const clearButton = document.querySelector("#clearButton");
 
 function makeGrids(size) {
-    for (let i = 0; i < size; i++) {
-      let column = document.createElement("div");
-      column.classList.add("column");
-      for (let j = 1; j <= size; j++) {
-        let row = document.createElement("div");
-        row.classList.add("row");
-        row.style.border = "2px solid black";
-        row.innerText = (i * size) + j;
-        column.appendChild(row);
-      }
-      screen.appendChild(column);
-     }
+  screen.innerHTML = ""; // Clear the grid
+  screen.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  screen.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    } 
-
-
-    function clearGrid(){
-      let number = prompt("How many squares per side for the new grid?")
-      if(number >= 1 && number <= 100){
-        while (screen.hasChildNodes()) {
-          screen.removeChild(screen.lastChild);
-      }
-        makeGrids(number)
-  } else {
-    alert("choose a number between 1-100");
+  for (let i = 0; i < size * size; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("row");
+    screen.appendChild(cell);
   }
 }
-buttons.addEventListener('click', clearGrid); 
-window.onload = makeGrids(16);
+
+function clearGrid() {
+  let number = prompt("How many squares per side for the new grid? (1-100)");
+
+  if (number && number >= 1 && number <= 100) {
+    makeGrids(number);
+  } else if (number !== null) {
+    alert("Please enter a valid number between 1 and 100!");
+    clearGrid(); // Retry if input is invalid
+  }
+}
+
+// Initialize default grid
+window.onload = () => makeGrids(16);
+
+// Clear grid on button click
+clearButton.addEventListener("click", clearGrid);
